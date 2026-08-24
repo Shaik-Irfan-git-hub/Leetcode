@@ -5,9 +5,10 @@ class Solution {
         prefix[0]=0;
         int ls=0;
         int rs=0;
+        int sum=0;
         for(int i=0;i<n;i++){
-            rs+=nums[i];
-            prefix[i+1]+=rs;
+            sum+=nums[i];
+            prefix[i+1]=sum;
         }
         for(int i=0;i<n;i++){
             ls=prefix[i];
