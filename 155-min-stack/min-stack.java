@@ -20,9 +20,7 @@ class MinStack {
     }
     
     public void pop() {
-        if(top==-1){
-            return;
-        }
+        
         top--;
 
     }
