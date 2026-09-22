@@ -1,23 +1,20 @@
 class Solution {
     public int timeRequiredToBuy(int[] tickets, int k) {
         int n=tickets.length;
-        int cnt=0;
-        int i=0;
-        while(i<n){
-            
-            
-            if(tickets[i]!=0){
-                tickets[i]-=1;
-                cnt++;
-                if(tickets[k]==0){
-                    
-                    break;
-                }
-            }
-            i++;
-            if(i==n) i=0;
-
+        ArrayDeque<Integer> q=new ArrayDeque<>();
+        for(int i=0;i<n;i++){
+            q.offer(i);
         }
-        return cnt;
+        int sum=0;
+        while(tickets[k]!=0){
+            int idx=q.peek();
+            q.poll();
+            if(tickets[idx]!=0){
+                sum+=1;
+                tickets[idx]-=1;
+                if(tickets[idx]!=0) q.offer(idx);
+            }
+        }
+        return sum;
     }
 }
