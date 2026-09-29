@@ -56,9 +56,7 @@ class MyLinkedList {
         Node newnode=new Node(val);
         if(index<0 || index>size) return;
         if(index==0){
-            newnode.next=head;
-            head=newnode;
-            size++;
+            addAtHead(val);
             return;
         }
         Node temp=head;
