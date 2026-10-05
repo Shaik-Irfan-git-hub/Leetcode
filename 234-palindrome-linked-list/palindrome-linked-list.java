@@ -17,14 +17,14 @@ class Solution {
             temp=temp.next;
         }
         
-        temp=head;
-        int i=list.size()-1;
-        while(temp!=null && i>=0){
-            if(temp.val!=list.get(i)){
+        int i=0;
+        int j=list.size()-1;
+        while(i<j){
+            if(list.get(i)!=list.get(j)){
                 return false;
             }
-            temp=temp.next;
-            i--;
+            i++;
+            j--;
         }
         return true;
     }
